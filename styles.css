@@ -1,0 +1,11 @@
+.formatdefaultcontent {
+    background-color: #FFF;
+}
+
+.coursenav {
+    border-bottom: 1px solid #ddd;
+}
+
+.coursenav .nav-tabs {
+    border-bottom: 0;
+}

@@ -1,0 +1,35 @@
+{{>format_default/courseadmintabs}}
+<div class="formatdefaultcontent">
+    {{{completioninfo}}}
+    {{{heading}}}
+    {{{courseactivityclipboard}}}
+    {{{startsectionlist}}}
+
+    {{#sections}}
+        <div id="section-{{sectionid}}" class="coursesection p-1">
+            {{{summary}}}
+            <div class="sectionheader {{header.classes}}">
+                <div class="leftcontent pull-left">{{{header.leftcontent}}}</div>
+                <h3 class="title m-b-1">{{{header.title}}}</h3>
+                <span class="name accesshide">{{{header.name}}}</span>
+                {{{header.availability}}}
+                <div class="rightcontent pull-right">{{{header.rightcontent}}}</div>
+                <div class="summary">{{{header.summary}}}</div>
+            </div>
+            <div class="sectioncontent card">
+                {{{coursemodules}}}
+                <div class="section-modchooser mdl-align p-1" >
+                    <span class="section-modchooser-link" >
+                        <span class="section-modchooser-text text-center">
+                            <a class="btn btn-default">
+                                <i class="fa fa-plus"></i> {{#str}}addactivity, format_default{{/str}}
+                            </a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    {{/sections}}
+    {{{endsectionlist}}}
+    {{{changenumber}}}
+</div>
