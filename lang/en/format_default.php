@@ -37,3 +37,7 @@ $string['page-course-view-default-x'] = 'Any course page in default format';
 $string['hidefromothers'] = 'Hide topic';
 $string['showfromothers'] = 'Show topic';
 $string['addactivity'] = 'Add activity or resource';
+
+// Temporary strings
+$string['backtocourse'] = 'Back';
+$string['backtosection'] = 'Back to section';

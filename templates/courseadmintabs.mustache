@@ -1,44 +1,58 @@
-<div class="coursenav p-l-1 p-r-1 m-b-2">
+
+{{#incourse}}
+<div class="coursenav p-l-course p-r-course">
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+            <a class="nav-link active" href="#">Contents</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Participants</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="{{{enrolusersurl}}}">Enrolled users</a>
+                <a class="dropdown-item" href="#">Enrollement methods</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
+                <a class="dropdown-item" href="#">Groups</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Permissions</a>
+                <a class="dropdown-item" href="#">Check Permissions</a>
+                <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="#">Other Users</a>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Grades</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link">Competencies</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link">Badges</a>
         </li>
     </ul>
 </div>
-<div class="courseactions m-a-1">
+<div class="courseactions p-3 p-l-course p-r-course">
     {{#editon}}
     <div class="btn-group m-r-1" role="group" aria-label="Edit course group">
-        <a href="{{{editon}}}" class="btn btn-primary btn-course">
+        <a href="{{{editon}}}" class="btn btn-outline-secondary btn-sm">
             <i class="fa fa-pencil"></i> {{#str}}edit{{/str}}
         </a>
     </div>
     {{/editon}}
     {{#editoff}}
     <div class="btn-group m-r-1" role="group" aria-label="Edit course group">
-        <a href="{{{editoff}}}" class="btn btn-primary  btn-course">
+        <a href="{{{editoff}}}" class="btn btn-outline-secondary  btn-sm">
             <i class="fa fa-pencil"></i> {{#str}}done, dbtransfer{{/str}}
         </a>
     </div>
     {{/editoff}}
     <div class="btn-group m-r-1" role="group">
-        <button type="button" class="btn btn-secondary btn-course"><i class="fa fa-cog"></i> Course settings</button>
-        <button id="coursesettings" type="button" class="btn btn-secondary dropdown-toggle btn-course" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="{{{editsettingsurl}}}" class="btn btn-default btn-sm">
+            <i class="fa fa-cog"></i> Course settings
+        </a>
+        <button id="coursesettings" type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         </button>
         <div class="dropdown-menu" aria-labelledby="coursesettings">
             <a class="dropdown-item" href="#">General</a>
@@ -53,5 +67,66 @@
             <a class="dropdown-item" href="#">Tags</a>
         </div>
      </div>
-
 </div>
+{{/incourse}}
+{{#inactivity}}
+<div class="activitynav p-l-course p-r-course">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Modulename</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Grades</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{{enrolusersurl}}}">Enrolled users</a>
+                <a class="dropdown-item" href="#">Enrollement methods</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Groups</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Permissions</a>
+                <a class="dropdown-item" href="#">Check Permissions</a>
+                <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="#">Other Users</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
+        </li>
+    </ul>
+</div>
+<div class="courseactions p-a-1 p-t-2 p-l-course p-r-course">
+    {{#editon}}
+    <div class="btn-group m-r-1" role="group" aria-label="Edit course group">
+        <a href="{{{editon}}}" class="btn btn-outline-secondary btn-sm">
+            <i class="fa fa-pencil"></i> {{#str}}edit{{/str}}
+        </a>
+    </div>
+    {{/editon}}
+    {{#editoff}}
+    <div class="btn-group m-r-1" role="group" aria-label="Edit course group">
+        <a href="{{{editoff}}}" class="btn btn-outline-secondary  btn-sm">
+            <i class="fa fa-pencil"></i> {{#str}}done, dbtransfer{{/str}}
+        </a>
+    </div>
+    {{/editoff}}
+    <div class="btn-group m-r-1" role="group">
+        <a href="{{{editsettingsurl}}}" class="btn btn-default btn-sm">
+            <i class="fa fa-cog"></i> Course settings
+        </a>
+        <button id="coursesettings" type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="coursesettings">
+            <a class="dropdown-item" href="#">General</a>
+            <a class="dropdown-item" href="#">Description</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Course format</a>
+            <a class="dropdown-item" href="#">Appearance</a>
+            <a class="dropdown-item" href="#">Files and uploads</a>
+            <a class="dropdown-item" href="#">Completion tracking</a>
+            <a class="dropdown-item" href="#">Groups</a>
+            <a class="dropdown-item" href="#">Role naming</a>
+            <a class="dropdown-item" href="#">Tags</a>
+        </div>
+     </div>
+</div>
+{{/inactivity}}

@@ -179,6 +179,11 @@ class format_default_renderer extends format_section_renderer_base {
 
         $template = new stdClass();
 
+        $template->editing = $this->page->user_is_editing();
+        $template->editsettingsurl = new moodle_url('/course/edit.php', ['id' => $course->id]);
+        $template->enrolusersurl = new moodle_url('/user/index.php', ['id' => $course->id]);
+        $template->incourse = true;
+
         if ($PAGE->user_is_editing()) {
             $template->editoff = new moodle_url($PAGE->url, ['sesskey' => sesskey(), 'edit' => 'off']);
         } else {
@@ -1043,5 +1048,17 @@ class format_default_renderer extends format_section_renderer_base {
         $menu->prioritise = true;
 
         return $this->render($menu);
+    }
+
+    /**
+     * renders HTML for format_default_edit_control
+     *
+     * @param format_default_edit_control $control
+     * @return string
+     */
+    protected function render_format_default_edit_control(format_default_edit_control $control) {
+        $template = new stdClass();
+        $template->inactivity = true;
+        return $this->render_from_template('format_default/courseadmintabs', $template);
     }
 }

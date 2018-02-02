@@ -1,12 +1,12 @@
 {{>format_default/courseadmintabs}}
-<div class="formatdefaultcontent">
+<div class="formatdefaultcontent p-l-course p-r-course">
     {{{completioninfo}}}
     {{{heading}}}
     {{{courseactivityclipboard}}}
     {{{startsectionlist}}}
 
     {{#sections}}
-        <div id="section-{{sectionid}}" class="coursesection p-1">
+        <div id="section-{{sectionid}}" class="coursesection py-3">
             {{{summary}}}
             <div class="sectionheader {{header.classes}}">
                 <div class="leftcontent pull-left">{{{header.leftcontent}}}</div>
@@ -17,15 +17,19 @@
                 <div class="summary">{{{header.summary}}}</div>
             </div>
             <div class="sectioncontent card">
-                {{{coursemodules}}}
-                <div class="section-modchooser mdl-align p-1" >
-                    <span class="section-modchooser-link" >
-                        <span class="section-modchooser-text text-center">
-                            <a class="btn btn-default">
-                                <i class="fa fa-plus"></i> {{#str}}addactivity, format_default{{/str}}
-                            </a>
+                <div class="card-body">
+                    {{{coursemodules}}}
+                    {{#editing}}
+                    <div class="section-modchooser mdl-align p-1">
+                        <span class="section-modchooser-link" >
+                            <span class="section-modchooser-text text-center">
+                                <a class="btn btn-default">
+                                    <i class="fa fa-plus"></i> {{#str}}addactivity, format_default{{/str}}
+                                </a>
+                            </span>
                         </span>
-                    </span>
+                    </div>
+                    {{/editing}}
                 </div>
             </div>
         </div>
